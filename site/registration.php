@@ -42,7 +42,10 @@ $dbname = "straxovaya";
 
 $con = mysqli_connect($hostname, $username, $password, $dbname);
 if(isset($_POST['login']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['fam']) && isset($_POST['imya']) && isset($_POST['vozr']) ){
-    if(!preg_match("/^[а-я А-Я]+$/u",$_POST['fam']) || !preg_match("/^[а-я А-Я]+$/u",$_POST['imya']) || !preg_match("/^[а-я А-Я]+$/u",$_POST['otch']) || !preg_match("/^[0-9]{4}$/",$_POST['vozr'])){
+    if(!preg_match("/^[а-я А-Я]+$/u",$_POST['fam']) 
+    && !preg_match("/^[а-я А-Я]+$/u",$_POST['imya']) 
+    && !preg_match("/^[а-я А-Я]+$/u",$_POST['otch']) 
+    && !preg_match("/^[0-9]{4}$/",$_POST['vozr'])){
         print("Неверные типы данных");
     }
     else{
